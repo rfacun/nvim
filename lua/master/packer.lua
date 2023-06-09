@@ -61,6 +61,11 @@ return require('packer').startup(function(use)
    use { "jay-babu/mason-null-ls.nvim" }
    use { "jose-elias-alvarez/null-ls.nvim" }
 
+   -- QoL
+   use { "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+   }
+
    if packer_bootstrap then
       require('packer').sync()
    end
