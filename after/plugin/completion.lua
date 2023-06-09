@@ -1,6 +1,13 @@
 local cmp = require("cmp")          -- Autocompletion plugin
 local luasnip = require("luasnip")  -- Snippets engine
 
+-- Autopairs support
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
 -- Enable collection of snippets from VSCode
 require("luasnip.loaders.from_vscode").lazy_load()
 

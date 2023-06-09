@@ -57,6 +57,11 @@ return require('packer').startup(function(use)
       requires = { "rafamadriz/friendly-snippets" } -- Snippets collection
    }
 
+   -- QoL
+   use { "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+   }
+
    if packer_bootstrap then
       require('packer').sync()
    end
