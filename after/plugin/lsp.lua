@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- These mappings are only available when an LSP server is running
 local on_attach = function(client, bufnr)
@@ -28,19 +29,22 @@ end
 -- Server configuration
 lspconfig["clangd"].setup({
    on_attach = on_attach,
+   capabilities = capabilities
 })
 
 lspconfig["bashls"].setup({
    on_attach = on_attach,
+   capabilities = capabilities
 })
 
 lspconfig["pyright"].setup({
    on_attach = on_attach,
+   capabilities = capabilities
 })
 
 lspconfig["lua_ls"].setup({
    on_attach = on_attach,
-
+   capabilities = capabilities,
    settings = {
       Lua = {
          diagnostics = {

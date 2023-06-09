@@ -43,6 +43,20 @@ return require('packer').startup(function(use)
    use { "williamboman/mason-lspconfig.nvim" }
    use { "neovim/nvim-lspconfig" }
 
+   -- Autocompletion
+   use { "hrsh7th/nvim-cmp" }
+   -- Sources
+   use { "hrsh7th/cmp-nvim-lsp" }      -- LSP
+   use { "saadparwaiz1/cmp_luasnip" }  -- Snippets
+   use { "hrsh7th/cmp-buffer" }        -- Buffer
+   use { "hrsh7th/cmp-path" }          -- Files and folders directories
+   --use { "hrsh7th/cmp-cmdline" }       -- Command line suggestions
+
+   -- Snippets
+   use { "L3MON4D3/LuaSnip",  -- Snippet engine
+      requires = { "rafamadriz/friendly-snippets" } -- Snippets collection
+   }
+
    if packer_bootstrap then
       require('packer').sync()
    end
