@@ -36,13 +36,11 @@ cmp.setup({
 
    -- Mappings
    mapping = cmp.mapping.preset.insert({
-      ['<C-p>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-n>'] = cmp.mapping.scroll_docs(4),
+      ['<C-p>'] = cmp.mapping.scroll_docs(-5),
+      ['<C-n>'] = cmp.mapping.scroll_docs(5),
       ["<C-k>"] = cmp.mapping.select_prev_item(),
       ["<C-j>"] = cmp.mapping.select_next_item(),
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
-      ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.abort(),
 
       -- Super tab (next field)
       ["<Tab>"] = cmp.mapping(function(fallback)
