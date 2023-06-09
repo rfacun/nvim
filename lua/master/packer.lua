@@ -35,6 +35,14 @@ return require('packer').startup(function(use)
       }
    }
 
+   -- Mason is used to manage and install external editor tooling such as:
+   -- LSP servers, DAP servers, linters and formatters
+   use { "williamboman/mason.nvim", run = ":MasonUpdate" }
+
+   -- LSP
+   use { "williamboman/mason-lspconfig.nvim" }
+   use { "neovim/nvim-lspconfig" }
+
    if packer_bootstrap then
       require('packer').sync()
    end
