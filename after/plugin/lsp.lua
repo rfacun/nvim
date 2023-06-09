@@ -6,7 +6,8 @@ local on_attach = function(client, bufnr)
    local opts = { buffer = bufnr, remap = false }
 
    -- Diagnostics
-   vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+   vim.keymap.set('n', '<space>e', function() require("telescope.builtin").diagnostics() end, opts)
+   --vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
@@ -25,6 +26,11 @@ local on_attach = function(client, bufnr)
    --if client.name == "pyright" then
    --end
 end
+
+-- Disable inline diagnostics 
+vim.diagnostic.config({
+   virtual_text = false
+})
 
 -- Server configuration
 lspconfig["clangd"].setup({
