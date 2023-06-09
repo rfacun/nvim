@@ -57,6 +57,10 @@ return require('packer').startup(function(use)
       requires = { "rafamadriz/friendly-snippets" } -- Snippets collection
    }
 
+   -- Linting
+   use { "jay-babu/mason-null-ls.nvim" }
+   use { "jose-elias-alvarez/null-ls.nvim" }
+
    if packer_bootstrap then
       require('packer').sync()
    end
