@@ -1,6 +1,3 @@
--- Unify the clipboard
-vim.cmd("set clipboard+=unnamedplus")
-
 -- Visual
 vim.opt.signcolumn = "yes"
 vim.opt.number = true
