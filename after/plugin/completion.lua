@@ -80,13 +80,13 @@ cmp.setup({
       completeopt = 'menu,menuone,noinsert'
    },
 
-   -- Autocompletion disabled for comments (when using Treesitter)
    enabled = function()
-      if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
-         return false
-      else
-         return true
-      end
+      -- Autocompletion disabled for Telescope
+		local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+		if buftype == "prompt" then return false end
+
+      -- Autocompletion disabled for comments (when using Treesitter)
+      local context = require("cmp.config.context")
+      return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
    end
 })
-
