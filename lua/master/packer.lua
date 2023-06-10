@@ -66,6 +66,10 @@ return require('packer').startup(function(use)
       config = function() require("nvim-autopairs").setup {} end
    }
 
+   -- Git integration
+   use { "tpope/vim-fugitive" }
+   use { "lewis6991/gitsigns.nvim" }
+
    if packer_bootstrap then
       require('packer').sync()
    end
