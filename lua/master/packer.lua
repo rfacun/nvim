@@ -61,14 +61,6 @@ return require('packer').startup(function(use)
    use { "jay-babu/mason-null-ls.nvim" }
    use { "jose-elias-alvarez/null-ls.nvim" }
 
-   -- DAP
-   use { "jay-babu/mason-nvim-dap.nvim" }
-   use { "mfussenegger/nvim-dap" }
-   use { "mfussenegger/nvim-dap-python" }
-   use { "rcarriga/nvim-dap-ui" }
-   --use { "theHamsta/nvim-dap-virtual-text" }
-   --use { "nvim-telescope/telescope-dap.nvim" }
-
    -- QoL
    use { "mbbill/undotree" }
    use { "windwp/nvim-autopairs",

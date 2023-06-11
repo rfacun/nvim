@@ -2,7 +2,6 @@
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local mason_null_ls = require("mason-null-ls")
-local mason_nvim_dap = require("mason-nvim-dap")
 
 -- Enable Mason
 mason.setup()
@@ -24,9 +23,4 @@ mason_null_ls.setup({
       "luacheck", "luaformatter" -- Install luarocks
 
    }
-})
-
--- DAP servers
-mason_nvim_dap.setup({
-   ensure_installed = { "debugpy" }
 })
