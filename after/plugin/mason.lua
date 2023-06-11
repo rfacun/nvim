@@ -9,12 +9,21 @@ mason.setup()
 
 -- LSP servers
 mason_lspconfig.setup({
-   ensure_installed = { "clangd", "bashls", "pyright", "lua_ls" }
+   ensure_installed = {
+      "bashls",
+      "pyright",
+      "lua_ls"
+   }
 })
 
--- Linters
+-- Linters and formatters
 mason_null_ls.setup({
-   ensure_installed = { "mypy", "ruff", "black" }
+   ensure_installed = {
+      "shellcheck", "shfmt",
+      "mypy", "ruff", "black",
+      "luacheck", "luaformatter" -- Install luarocks
+
+   }
 })
 
 -- DAP servers

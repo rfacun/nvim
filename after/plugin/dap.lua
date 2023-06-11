@@ -16,4 +16,4 @@ dap.listeners.before.event_exited["dapui_config"] = function() dap_ui.close() en
 
 -- Mappings
 vim.keymap.set('n', '<leader>db', function() vim.cmd("DapToggleBreakpoint") end)
-vim.keymap.set('n', '<leader>dpr', function() dap_python.test_method()  end)
+vim.keymap.set('n', '<leader>dpr', function() dap_python.test_method()  end)  -- Python

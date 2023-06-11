@@ -1,16 +1,19 @@
 local null_ls = require("null-ls")
 local diagnostics = null_ls.builtins.diagnostics
 local formatting = null_ls.builtins.formatting
+local code_actions = null_ls.builtins.code_actions
 
 -- Format code when saving
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
    sources = {
-      -- Code formatting
-      formatting.black,
+      -- Shell scripts
+      code_actions.shellcheck,
+      formatting.shfmt,
 
-      -- Actual linting
+      -- Python
+      formatting.black,
       diagnostics.mypy.with({
          diagnostic_config = {
             -- See :help vim.diagnostic.config()
@@ -29,8 +32,13 @@ null_ls.setup({
             signs = true,
             update_in_insert = false,
             severity_sort = true,
-         },
-      })
+         }
+      }),
+
+      -- Lua
+      diagnostics.luacheck,
+      formatting.lua_format
+
    },
 
    -- Format code when saving

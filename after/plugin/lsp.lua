@@ -35,11 +35,6 @@ vim.diagnostic.config({
 })
 
 -- Server configuration
-lspconfig["clangd"].setup({
-   on_attach = on_attach,
-   capabilities = capabilities
-})
-
 lspconfig["bashls"].setup({
    on_attach = on_attach,
    capabilities = capabilities
