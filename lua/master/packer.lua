@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
    use { "jose-elias-alvarez/null-ls.nvim" }
 
    -- QoL
+   use { "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end
+   }
    use { "mbbill/undotree" }
    use { "windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
